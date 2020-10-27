@@ -1,0 +1,32 @@
+_saved_state:
+  current_data_file: Ethiopia_Daily_Data_Multiple_Stations.xlsx
+  current_sheet: Baro
+  current_wikifiers:
+  - wikify_region_output.csv
+  current_yaml: Baro.yaml
+cache_id: def36317-4666-4667-8ee2-2ceab590b60f
+data_files:
+  Ethiopia_Daily_Data_Multiple_Stations.xlsx:
+  - Baro
+  - Bulbul
+  - Dincha
+  - Gecha
+  - Asendabo
+  - Gojeb
+  - Ouwa
+  - Sheta
+  - Sori
+  - Woshi
+entity_files: []
+handle_calendar: leave
+sparql_endpoint: https://dsbox02.isi.edu:8888/bigdata/namespace/wdq/sparql
+title: ethiopia_dataset
+warn_for_empty_cells: false
+wikifier_files:
+- wikify_region_output.csv
+yaml_files:
+- Baro.yaml
+yaml_sheet_associations:
+  Ethiopia_Daily_Data_Multiple_Stations.xlsx:
+    Baro:
+    - Baro.yaml

@@ -1,0 +1,34 @@
+statementMapping:
+  region:
+    - left: C
+      right: N
+      top: 11
+      bottom: 170
+      skip_rows:
+        - =value[A, $row]==""
+        - 50
+        - 93
+        - 136
+  template:
+    #item: =item[A, 4]
+    item: '=regex(value[A, 4], "Station Name : (.*)", 1)'
+    property: P2225
+    value: =value[$col, $row]
+    unit: Q794261
+    qualifier:
+    # Once replace_regex is released should clean up this section
+      - property: P2046
+        value: =replace(value[C, 7 + 43*(($row - 11)//43)], "[^\d.-]", "")
+        unit: Q712226
+      - property: P625
+      # Discuss with Ke-Thia about handling coordinates 
+        latitude: =substring(value[A, 7 + 43*(($row - 11)//43)], 11, 20)
+        longitude: =substring(value[B, 7 + 43*(($row - 11)//43)], 12, 21)
+        #latitude: =concat(strip(substring(value[A, 7 + 43*(($row - 11)//43)], 10, 12)),'°',strip(substring(value[A, 7 + 43*(($row - 11)//43)], 13, 15)), '\'', strip(strip(substring(value[A, 7 + 43*(($row - 11)//43)], 16, 18))), '"', strip(substring(value[A, 7 + 43*(($row - 11)//43)], 19, 20)))
+        #ongitude: =concat(strip(substring(value[B, 7 + 43*(($row - 11)//43)], 11, 14)),'°',strip(substring(value[B, 7 + 43*(($row - 11)//43)], 15, 17)),'\'', strip(strip(substring(value[B, 7 + 43*(($row - 11)//43)], 18, 20))), '"', strip(substring(value[B, 7 + 43*(($row - 11)//43)], 21, 22)))
+        globe: wgs84
+      - calendar: Q1985727
+        format: '%Y-%b-%d'
+        property: P585
+        time_zone: 0
+        value: =concat(replace(value[B, 3 + 43*(($row - 11)//43)], "[^\d.-]", ""), strip(value[$col, 9]), strip(value[A, $row]), "-")
