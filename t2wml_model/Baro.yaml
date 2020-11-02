@@ -10,8 +10,7 @@ statementMapping:
         - 93
         - 136
   template:
-    item: Q5
-    #item: '=regex(value[A, 4], "Station Name : (.*)", 1)'
+    item: '=regex(value[A, 4], "Station Name : (.*)", 1)'
     property: P2225
     value: =value[$col, $row]
     unit: Q794261
@@ -20,8 +19,8 @@ statementMapping:
         value: =starts_with(value[C, $row-$n], "Area") -> replace_regex(value[C, $row-$n], "[^\d.-]", "")
         unit: Q712226
       - property: P625
-        latitude: =substring(value[A, 7 + 43*(($row - 11)//43)], 11, 20)
-        longitude: =substring(value[B, 7 + 43*(($row - 11)//43)], 12, 21)
+        latitude: =starts_with(value[A, $row-$n], "Latitude") -> strip_whitespace(substring(value[A, $row-$n], 12, 20))
+        longitude: =starts_with(value[B, $row-$n], "Longitude") -> strip_whitespace(substring(value[B, $row-$n], 13, 22))
         globe: wgs84
       - calendar: Q1985727
         format: '%Y-%b-%d'
