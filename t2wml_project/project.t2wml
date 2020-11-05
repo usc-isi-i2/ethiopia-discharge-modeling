@@ -1,9 +1,9 @@
 _saved_state:
   current_data_file: Ethiopia_Daily_Data_Multiple_Stations.xlsx
-  current_sheet: Baro
+  current_sheet: Ouwa
   current_wikifiers:
   - wikify_region_output.csv
-  current_yaml: Baro.yaml
+  current_yaml: Ouwa.yaml
 cache_id: def36317-4666-4667-8ee2-2ceab590b60f
 data_files:
   Ethiopia_Daily_Data_Multiple_Stations.xlsx:
@@ -25,8 +25,28 @@ warn_for_empty_cells: false
 wikifier_files:
 - wikify_region_output.csv
 yaml_files:
-- Baro.yaml
+- discharge_model.yaml
+- Ouwa.yaml
 yaml_sheet_associations:
   Ethiopia_Daily_Data_Multiple_Stations.xlsx:
+    Asendabo:
+    - discharge_model.yaml
     Baro:
-    - Baro.yaml
+    - discharge_model.yaml
+    Bulbul:
+    - discharge_model.yaml
+    Dincha:
+    - discharge_model.yaml
+    Gecha:
+    - discharge_model.yaml
+    Gojeb:
+    - discharge_model.yaml
+    Ouwa:
+    - discharge_model.yaml
+    - Ouwa.yaml
+    Sheta:
+    - discharge_model.yaml
+    Sori:
+    - discharge_model.yaml
+    Woshi:
+    - discharge_model.yaml
