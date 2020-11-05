@@ -10,7 +10,7 @@ statementMapping:
         - =starts_with(value[A, $row], "Time-Series")
         - =starts_with(value[A, $row], "Latitude")
   template:
-    item: '=regex(value[A, 4], "Station Name : (.*)", 1)'
+    item: '=starts_with(value[A, $row-$n], "Station Name") -> regex(value[A, $row-$n], "Station Name : (.*)", 1)'
     property: P2225
     value: =value[$col, $row]
     unit: Q794261
@@ -26,4 +26,4 @@ statementMapping:
         format: '%Y-%b-%d'
         property: P585
         time_zone: 0
-        value: =starts_with(value[B, $row-$n], "Year") -> concat(replace_regex(value[B, $row-$n], "[^\d.-]", ""), strip_whitespace(value[$col, 9]), strip_whitespace(value[A, $row]), "-")
+        value: =starts_with(value[B, $row-$n], "Year") -> concat(replace_regex(value[B, $row-$n], "[^\d.-]", ""), strip_whitespace(value[$col, $row-$n+6]), strip_whitespace(value[A, $row]), "-")

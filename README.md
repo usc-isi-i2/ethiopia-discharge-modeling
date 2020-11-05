@@ -2,8 +2,8 @@
 
 T2WML modeling for Ethiopia discharge dataset
 
-Assumes a regular format for all files (Specifically row 9 and cell A4). Edited sheet Gojeb to
-conform to this structure by adding extra blank row at top
+Assumes a regular format for all files (Specifically no typos in names and 
+month header rows are 6 rows after year row) 
 
 Output files in `data/results`
 
