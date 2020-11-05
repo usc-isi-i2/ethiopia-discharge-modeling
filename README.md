@@ -10,13 +10,13 @@ Output files in `data/results`
 ## Setup
 
 ### Install KGTK (Uses dev branch for Kypher features)
-`
+```
 git clone git@github.com:usc-isi-i2/kgtk.git
 cd ktgk
 git checkout dev
 python setup.py install
 cd ..
-`
+```
 
 ### Install T2WML API
 
